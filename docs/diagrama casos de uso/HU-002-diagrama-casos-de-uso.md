@@ -15,9 +15,7 @@
 
 ```mermaid
 flowchart LR
-    Visitante((Visitante)) --> UC2(Percibir identidad visual)
+    Visitante((Visitante)) --> UC2(Ver a Chayqui en la bienvenida)
     
-    UC2 -. include .-> UC2_1(Ver paleta de colores rojo, dorado, azul y verde)
-    UC2 -. include .-> UC2_2(Visualizar tipografía principal y secundaria)
-    UC2 -. include .-> UC2_3(Apreciar coherencia en componentes)
-    UC2 -. extend .-> UC2_4(Interactuar con personaje Chayqui)
+    UC2 -. include .-> UC2_1(Ver presentación de Chayqui)
+    UC2 -. include .-> UC2_2(Ver frase inicial de acompañamiento)
