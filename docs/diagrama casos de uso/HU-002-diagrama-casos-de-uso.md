@@ -15,9 +15,9 @@
 
 ```mermaid
 flowchart LR
-    Visitante((Visitante)) --> UC2(Percibir identidad visual)
+    Visitante((Visitante)) --> UC2(Reconocer marca Huánuco)
     
-    UC2 -. include .-> UC2_1(Apreciar paleta de colores huanuqueña)
-    UC2 -. include .-> UC2_2(Visualizar tipografía principal y secundaria)
-    UC2 -. include .-> UC2_3(Ver coherencia en botones, tarjetas e íconos)
-    UC2 -. extend .-> UC2_4(Interactuar con personaje Chayqui)
+    UC2 -. include .-> UC2_A(Cargar paleta institucional - Rojo, Dorado, Azul, Verde)
+    UC2 -. include .-> UC2_B(Aplicar jerarquía tipográfica)
+    UC2 -. include .-> UC2_C(Estilizar componentes visuales - Tarjetas y Botones)
+    UC2 -. extend .-> UC2_D(Desplegar presentación con mascota Chayqui)
