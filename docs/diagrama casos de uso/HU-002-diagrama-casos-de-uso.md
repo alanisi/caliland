@@ -11,22 +11,13 @@
 | RF-008 | Mantener coherencia visual entre botones, tarjetas, títulos e íconos. |
 | RF-009 | Mostrar a Chayqui como elemento visual introductorio. |
 
-## Modelo de Sistema de Diseño
+## Diagrama de casos de uso
 
 ```mermaid
-mindmap
-  root((Identidad Visual CaliLand))
-    Paleta de Colores
-      Rojo Huanuqueño
-      Dorado
-      Azul
-      Verde
-    Tipografía
-      Principal (Títulos)
-      Secundaria (Textos)
-    Componentes Coherentes
-      Botones
-      Tarjetas
-      Íconos
-    Personaje Identificador
-      Chayqui (Mascota Introductoria)
+flowchart LR
+    Visitante((Visitante)) --> UC2(Percibir identidad visual)
+    
+    UC2 -. include .-> UC2_1(Ver paleta de colores rojo, dorado, azul y verde)
+    UC2 -. include .-> UC2_2(Visualizar tipografía principal y secundaria)
+    UC2 -. include .-> UC2_3(Apreciar coherencia en componentes)
+    UC2 -. extend .-> UC2_4(Interactuar con personaje Chayqui)
