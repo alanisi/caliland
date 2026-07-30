@@ -18,7 +18,6 @@
 flowchart LR
     Visitante((Visitante)) --> UC1(Ver página de inicio)
     
-    UC1 -. include .-> UC1_1(Visualizar nombre e imagotipo)
-    UC1 -. include .-> UC1_2(Ver slogan 'Explorando Huánuco')
-    UC1 -. include .-> UC1_3(Leer descripción breve)
-    UC1 -. extend .-> UC1_4(Hacer clic en 'Explorar mapa')
+    UC1 -. include .-> UC1_1(Visualizar elementos de marca)
+    UC1 -. include .-> UC1_2(Leer descripción del proyecto)
+    UC1 -. extend .-> UC1_3(Hacer clic en 'Explorar mapa')
