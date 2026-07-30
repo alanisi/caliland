@@ -17,20 +17,19 @@
 ```mermaid
 sequenceDiagram
     actor Visitante
-    participant Sistema
-    participant API as API/Backend
+    participant UI as Frontend (CaliLand)
+    participant API as Backend/API
 
-    Visitante->>Sistema: Ingresa a la página de inicio
-    Sistema->>API: Solicita datos de bienvenida (nombre, slogan, imagotipo, descripción)
-    API-->>Sistema: Devuelve datos de bienvenida
+    Visitante->>UI: Solicita ingresar a la web
+    UI->>API: GET /api/v1/config/landing
+    activate API
+    API-->>UI: Retorna datos de presentación (Marca, Slogan, Logo)
+    deactivate API
 
-    loop Renderiza elementos de bienvenida
-        Sistema-->>Visitante: Muestra nombre "CaliLand" (RF-001)
-        Sistema-->>Visitante: Muestra slogan "Explorando Huánuco" (RF-002)
-        Sistema-->>Visitante: Muestra descripción breve del proyecto (RF-003)
-        Sistema-->>Visitante: Muestra imagotipo o isotipo principal (RF-004)
-        Sistema-->>Visitante: Muestra botón "Explorar mapa" (RF-005)
-    end
+    UI->>UI: Renderiza Header (RF-001, RF-002, RF-004)
+    UI->>UI: Renderiza sección de bienvenida (RF-003)
+    UI->>UI: Habilita el botón CTA "Explorar mapa" (RF-005)
+    UI-->>Visitante: Muestra la pantalla principal lista
 
-    Visitante->>Sistema: Toca "Explorar mapa"
-    Sistema-->>Visitante: Redirige a la vista del mapa
+    Visitante->>UI: Hace clic en "Explorar mapa" (RF-005)
+    UI-->>Visitante: Redirige a la sección del mapa
