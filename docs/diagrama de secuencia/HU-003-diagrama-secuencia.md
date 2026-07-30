@@ -17,17 +17,18 @@
 ```mermaid
 sequenceDiagram
     actor Visitante
-    participant Sistema
-    participant API as API/Backend
+    participant UI as Interfaz (Frontend)
+    participant API as API / Servidor de Contenido
 
-    Visitante->>Sistema: Navega hacia la sección de información/propósito
-    Sistema->>API: Solicita datos del propósito del proyecto
-    API-->>Sistema: Devuelve información institucional y descripciones
+    Visitante->>UI: Navega hacia la sección de propósito / información
+    UI->>API: GET /api/v1/propósito-caliland
+    activate API
+    API-->>UI: Devuelve textos institucionales y lista de zonas
+    deactivate API
 
-    loop Renderiza información del propósito
-        Sistema-->>Visitante: Muestra el nombre "CaliLand" (RF-001)
-        Sistema-->>Visitante: Muestra el slogan "Explorando Huánuco" (RF-002)
-        Sistema-->>Visitante: Muestra la sección "¿Qué es CaliLand?" (RF-010)
-        Sistema-->>Visitante: Muestra la explicación de experiencia digital introductoria (RF-011)
-        Sistema-->>Visitante: Muestra la indicación de exploración de zonas culturales y turísticas (RF-012)
-    end
+    UI->>UI: Renderiza sección "¿Qué es CaliLand?" (RF-010)
+    UI->>UI: Muestra la explicación de experiencia introductoria (RF-011)
+    UI->>UI: Despliega información sobre zonas culturales y turísticas (RF-012)
+    UI->>UI: Muestra el nombre "CaliLand" (RF-001) y slogan "Explorando Huánuco" (RF-002)
+
+    UI-->>Visitante: Presenta la sección de propósito completamente cargada
