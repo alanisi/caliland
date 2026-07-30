@@ -19,3 +19,22 @@ classDiagram
     }
 
     LandingPage "1" --> "1" Mapa : dirige a
+
+classDiagram
+    class LandingPage {
+        -nombre: String
+        +mostrarInicio()
+    }
+    class IdentidadVisual {
+        -colores: String[]
+        -tipografia: String
+        +aplicarEstilos()
+    }
+    class PersonajeChayqui {
+        -nombre: String
+        -mensajeBienvenida: String
+        +mostrarPresentacion()
+    }
+
+    LandingPage "1" --> "1" IdentidadVisual : aplica
+    LandingPage "1" *-- "1" PersonajeChayqui : muestra a
