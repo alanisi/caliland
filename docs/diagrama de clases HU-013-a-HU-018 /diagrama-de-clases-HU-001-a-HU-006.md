@@ -17,8 +17,11 @@ classDiagram
     LandingPage "1" --> "1" Mapa : dirige a
 ```
 ---
+
+## HU-002: Identidad visual propia de Huánuco
+
 ```mermaid
-   classDiagram
+classDiagram
     class IdentidadVisual {
         -colores: String[]
         -tipografia: String
@@ -27,12 +30,26 @@ classDiagram
     class PersonajeChayqui {
         -nombre: String
         -mensajeBienvenida: String
-        +mostrarPresentacion()}
-```
-
----
-
-
-    
+        +mostrarPresentacion()
+    }
 
     IdentidadVisual "1" -- "1" PersonajeChayqui : define estilo de
+```
+---
+## HU-003: Conocer el propósito de CaliLand
+
+```mermaid
+classDiagram
+    class SeccionProposito {
+        -titulo: String
+        -contenido: String
+        +mostrarInformacion()
+    }
+    class Zona {
+        -nombre: String
+        -tipo: String
+    }
+
+    SeccionProposito "1" o-- "1..*" Zona : informa sobre
+```
+---
