@@ -2,7 +2,7 @@
 
 ---
 
-## HU-001 y HU-002: Inicio e Identidad Visual
+## HU-001: Página de inicio atractiva de CaliLand
 
 ```mermaid
 classDiagram
@@ -17,6 +17,9 @@ classDiagram
         -estadoCarga: boolean
         +cargarCapas()
     }
+
+    LandingPage "1" --> "1" Mapa : dirige a  
+classDiagram
     class IdentidadVisual {
         -colores: String[]
         -tipografia: String
@@ -28,6 +31,58 @@ classDiagram
         +mostrarPresentacion()
     }
 
-    LandingPage "1" --> "1" Mapa : dirige a
-    LandingPage "1" --> "1" IdentidadVisual : aplica
-    LandingPage "1" *-- "1" PersonajeChayqui : muestra a
+    IdentidadVisual "1" -- "1" PersonajeChayqui : define estilo de
+classDiagram
+    class SeccionProposito {
+        -titulo: String
+        -contenido: String
+        +mostrarInformacion()
+    }
+    class Zona {
+        -nombre: String
+        -tipo: String
+    }
+
+    SeccionProposito "1" o-- "1..*" Zona : informa sobre
+classDiagram
+    class Mapa {
+        -zonas: Zona[]
+        +renderizarZonas()
+    }
+    class Zona {
+        -nombre: String
+        -delimitacion: String
+        +resaltar()
+    }
+
+    Mapa "1" *-- "1..*" Zona : contiene
+classDiagram
+    class Zona {
+        -id: String
+        -nombre: String
+        -estadoSeleccion: boolean
+        +resaltar()
+        +seleccionar()
+    }
+    class ContenidoCultural {
+        -titulo: String
+        -descripcion: String
+        +cargarDatos()
+    }
+
+    Zona "1" --> "1..*" ContenidoCultural : despliega
+classDiagram
+    class TarjetaResumen {
+        -titulo: String
+        -resumen: String
+        -imagenUrl: String
+        +mostrar()
+        +ocultar()
+    }
+    class Zona {
+        -nombre: String
+        -resumenTexto: String
+        +obtenerResumen()
+    }
+
+    Zona "1" -- "1" TarjetaResumen : genera
