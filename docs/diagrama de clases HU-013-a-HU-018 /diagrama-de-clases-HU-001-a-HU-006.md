@@ -27,12 +27,12 @@ classDiagram
     class PersonajeChayqui {
         -nombre: String
         -mensajeBienvenida: String
-        +mostrarPresentacion()
+        +mostrarPresentacion()}
 ```
 
 ---
 
 
-    }
+    
 
     IdentidadVisual "1" -- "1" PersonajeChayqui : define estilo de
