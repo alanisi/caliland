@@ -15,7 +15,10 @@ classDiagram
     }
 
     LandingPage "1" --> "1" Mapa : dirige a
-              classDiagram
+```
+---
+```mermaid
+   classDiagram
     class IdentidadVisual {
         -colores: String[]
         -tipografia: String
@@ -25,6 +28,11 @@ classDiagram
         -nombre: String
         -mensajeBienvenida: String
         +mostrarPresentacion()
+```
+
+---
+
+
     }
 
     IdentidadVisual "1" -- "1" PersonajeChayqui : define estilo de
