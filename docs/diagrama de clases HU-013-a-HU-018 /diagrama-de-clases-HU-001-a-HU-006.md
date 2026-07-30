@@ -15,8 +15,6 @@ classDiagram
     }
 
     LandingPage "1" --> "1" Mapa : dirige a
-
-
               classDiagram
     class IdentidadVisual {
         -colores: String[]
