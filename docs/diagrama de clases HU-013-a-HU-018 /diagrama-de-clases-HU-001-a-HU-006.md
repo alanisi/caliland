@@ -1,10 +1,3 @@
-# Diagramas de Clases — HU-001 a HU-006
-
----
-
-## HU-001: Página de inicio atractiva de CaliLand
-
-```mermaid
 classDiagram
     class LandingPage {
         -nombre: String
@@ -17,14 +10,6 @@ classDiagram
         -estadoCarga: boolean
         +cargarCapas()
     }
-
-    LandingPage "1" --> "1" Mapa : dirige a
-
-classDiagram
-    class LandingPage {
-        -nombre: String
-        +mostrarInicio()
-    }
     class IdentidadVisual {
         -colores: String[]
         -tipografia: String
@@ -36,5 +21,6 @@ classDiagram
         +mostrarPresentacion()
     }
 
+    LandingPage "1" --> "1" Mapa : dirige a
     LandingPage "1" --> "1" IdentidadVisual : aplica
     LandingPage "1" *-- "1" PersonajeChayqui : muestra a
