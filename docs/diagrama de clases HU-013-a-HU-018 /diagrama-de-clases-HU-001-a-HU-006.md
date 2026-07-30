@@ -1,3 +1,10 @@
+# Diagramas de Clases — HU-001 a HU-006
+
+---
+
+## HU-001 y HU-002: Inicio e Identidad Visual
+
+```mermaid
 classDiagram
     class LandingPage {
         -nombre: String
