@@ -1,7 +1,3 @@
-# Diagramas de Clases — HU-001 a HU-006
-
----
-
 ## HU-001: Página de inicio atractiva de CaliLand
 
 ```mermaid
@@ -19,7 +15,6 @@ classDiagram
     }
 
     LandingPage "1" --> "1" Mapa : dirige a
-```mermaid
 classDiagram
     class IdentidadVisual {
         -colores: String[]
@@ -33,63 +28,3 @@ classDiagram
     }
 
     IdentidadVisual "1" -- "1" PersonajeChayqui : define estilo de
-```mermaid
-classDiagram
-    class SeccionProposito {
-        -titulo: String
-        -contenido: String
-        +mostrarInformacion()
-    }
-    class Zona {
-        -nombre: String
-        -tipo: String
-    }
-
-    SeccionProposito "1" o-- "1..*" Zona : informa sobre
-
-```mermaid
-classDiagram
-    class Mapa {
-        -zonas: Zona[]
-        +renderizarZonas()
-    }
-    class Zona {
-        -nombre: String
-        -delimitacion: String
-        +resaltar()
-    }
-
-    Mapa "1" *-- "1..*" Zona : contiene
-```mermaid
-classDiagram
-    class Zona {
-        -id: String
-        -nombre: String
-        -estadoSeleccion: boolean
-        +resaltar()
-        +seleccionar()
-    }
-    class ContenidoCultural {
-        -titulo: String
-        -descripcion: String
-        +cargarDatos()
-    }
-
-    Zona "1" --> "1..*" ContenidoCultural : despliega
-```mermaid
-classDiagram
-    class TarjetaResumen {
-        -titulo: String
-        -resumen: String
-        -imagenUrl: String
-        +mostrar()
-        +ocultar()
-    }
-    class Zona {
-        -nombre: String
-        -resumenTexto: String
-```mermaid
-        +obtenerResumen()
-    }
-
-    Zona "1" -- "1" TarjetaResumen : genera
