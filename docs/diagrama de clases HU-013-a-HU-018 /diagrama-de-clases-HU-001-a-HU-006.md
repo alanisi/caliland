@@ -18,7 +18,8 @@ classDiagram
         +cargarCapas()
     }
 
-    LandingPage "1" --> "1" Mapa : dirige a  
+    LandingPage "1" --> "1" Mapa : dirige a
+```mermaid
 classDiagram
     class IdentidadVisual {
         -colores: String[]
@@ -32,6 +33,7 @@ classDiagram
     }
 
     IdentidadVisual "1" -- "1" PersonajeChayqui : define estilo de
+```mermaid
 classDiagram
     class SeccionProposito {
         -titulo: String
@@ -44,6 +46,8 @@ classDiagram
     }
 
     SeccionProposito "1" o-- "1..*" Zona : informa sobre
+
+```mermaid
 classDiagram
     class Mapa {
         -zonas: Zona[]
@@ -56,6 +60,7 @@ classDiagram
     }
 
     Mapa "1" *-- "1..*" Zona : contiene
+```mermaid
 classDiagram
     class Zona {
         -id: String
@@ -71,6 +76,7 @@ classDiagram
     }
 
     Zona "1" --> "1..*" ContenidoCultural : despliega
+```mermaid
 classDiagram
     class TarjetaResumen {
         -titulo: String
@@ -82,6 +88,7 @@ classDiagram
     class Zona {
         -nombre: String
         -resumenTexto: String
+```mermaid
         +obtenerResumen()
     }
 
