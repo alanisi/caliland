@@ -17,20 +17,18 @@
 ```mermaid
 sequenceDiagram
     actor Visitante
-    participant Sistema
-    participant API as API/Backend
+    participant UI as Interfaz (Frontend)
+    participant API as Servidor API / Mapas
 
-    Visitante->>Sistema: Accede a la pantalla de selección de mapa
-    Sistema->>API: Solicita información de la vista principal y mapa zonificado
-    API-->>Sistema: Devuelve datos de bienvenida y configuración del mapa
+    Visitante->>UI: Accede al módulo del mapa de Huánuco
+    UI->>API: GET /api/v1/mapa/zonas-huanuco
+    activate API
+    API-->>UI: Devuelve coordenadas, polígonos y datos de zonificación
+    deactivate API
 
-    loop Renderiza elementos visuales de la vista
-        Sistema-->>Visitante: Muestra el nombre "CaliLand" (RF-001)
-        Sistema-->>Visitante: Muestra el slogan "Explorando Huánuco" (RF-002)
-        Sistema-->>Visitante: Muestra la descripción breve del proyecto (RF-003)
-        Sistema-->>Visitante: Muestra el imagotipo o isotipo principal (RF-004)
-        Sistema-->>Visitante: Habilita el botón principal "Explorar mapa" (RF-005)
-    end
+    UI->>UI: Carga componentes de marca (RF-001, RF-002, RF-004)
+    UI->>UI: Renderiza la descripción del proyecto (RF-003)
+    UI->>UI: Procesa capas vectoriales y dibuja el mapa zonificado de Huánuco
+    UI->>UI: Habilita el botón interactivo "Explorar mapa" (RF-005)
 
-    Visitante->>Sistema: Hace clic en "Explorar mapa" (RF-005)
-    Sistema-->>Visitante: Despliega el mapa zonificado de Huánuco para su interacción
+    UI-->>Visitante: Muestra la vista con el mapa zonificado listo para interactuar
